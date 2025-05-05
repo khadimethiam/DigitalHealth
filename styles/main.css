@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #39b5ff;
+  --secondary-color: #1a237e;
+  --light-blue: #e1f5fe;
+  --white: #ffffff;
+  --gray: #f5f7fa;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Backgrounds */
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* QR Scanner */
+.qr-scanner {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  animation: scanAnimation 2s infinite;
+}
+
+@keyframes scanAnimation {
+  0% {
+    top: 0;
+    box-shadow: 0 0 8px 2px rgba(57, 181, 255, 0.8);
+  }
+  50% {
+    top: 100%;
+    box-shadow: 0 0 8px 2px rgba(57, 181, 255, 0.8);
+  }
+  100% {
+    top: 0;
+    box-shadow: 0 0 8px 2px rgba(57, 181, 255, 0.8);
+  }
+}
+
+/* Timeline */
+.timeline-container {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--primary-color);
+}
+
+.timeline-point {
+  position: absolute;
+  left: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 3px solid white;
+}
+
+/* Cards and Icons */
+.benefit-icon {
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: translateY(-5px);
+  color: var(--primary-color);
+}
+
+.testimonial-card {
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout Elements */
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.section-divider {
+  height: 100px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2339B5FF' fill-opacity='0.2' d='M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,117.3C960,107,1056,149,1152,165.3C1248,181,1344,171,1392,165.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Colors and Typography */
+.primary-color {
+  color: var(--primary-blue);
+}
+.dark-blue {
+  color: var(--dark-blue);
+}
+.primary-bg {
+  background-color: var(--primary-blue);
+}
+.dark-blue-bg {
+  background-color: var(--dark-blue);
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Process */
+.process-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-arrow::after {
+  content: "\f061";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  right: -20px;
+  color: var(--primary-blue);
+  font-size: 20px;
+}
+
+.process-item:last-child .process-arrow::after {
+  content: "";
+}
+
+/* Advantages */
+.advantage-item {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.advantage-item i {
+  margin-right: 1rem;
+  color: var(--primary-blue);
+}
+
+/* Print Styles */
+@media print {
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+  section {
+    break-inside: avoid;
+  }
+}
